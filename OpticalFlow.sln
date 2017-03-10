@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpticalFlow", "OpticalFlow\OpticalFlow.vcxproj", "{732E27AD-47FC-4659-A2EB-16A102155017}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CompOpticalFlow", "CompOpticalFlow\CompOpticalFlow.vcxproj", "{7B7C7AA2-0032-4E99-B013-C8F734989149}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{732E27AD-47FC-4659-A2EB-16A102155017}.Debug|x64.ActiveCfg = Debug|x64
+		{732E27AD-47FC-4659-A2EB-16A102155017}.Debug|x64.Build.0 = Debug|x64
+		{732E27AD-47FC-4659-A2EB-16A102155017}.Debug|x86.ActiveCfg = Debug|Win32
+		{732E27AD-47FC-4659-A2EB-16A102155017}.Debug|x86.Build.0 = Debug|Win32
+		{732E27AD-47FC-4659-A2EB-16A102155017}.Release|x64.ActiveCfg = Release|x64
+		{732E27AD-47FC-4659-A2EB-16A102155017}.Release|x64.Build.0 = Release|x64
+		{732E27AD-47FC-4659-A2EB-16A102155017}.Release|x86.ActiveCfg = Release|Win32
+		{732E27AD-47FC-4659-A2EB-16A102155017}.Release|x86.Build.0 = Release|Win32
+		{7B7C7AA2-0032-4E99-B013-C8F734989149}.Debug|x64.ActiveCfg = Debug|x64
+		{7B7C7AA2-0032-4E99-B013-C8F734989149}.Debug|x64.Build.0 = Debug|x64
+		{7B7C7AA2-0032-4E99-B013-C8F734989149}.Debug|x86.ActiveCfg = Debug|Win32
+		{7B7C7AA2-0032-4E99-B013-C8F734989149}.Debug|x86.Build.0 = Debug|Win32
+		{7B7C7AA2-0032-4E99-B013-C8F734989149}.Release|x64.ActiveCfg = Release|x64
+		{7B7C7AA2-0032-4E99-B013-C8F734989149}.Release|x64.Build.0 = Release|x64
+		{7B7C7AA2-0032-4E99-B013-C8F734989149}.Release|x86.ActiveCfg = Release|Win32
+		{7B7C7AA2-0032-4E99-B013-C8F734989149}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,65 @@
+cmake_minimum_required(VERSION 2.8)
+
+IF(POLICY CMP0025)
+	CMAKE_POLICY(SET CMP0025 NEW)
+ENDIF()
+
+PROJECT(OpticalFlow CXX C)
+
+IF(NOT DEFINED CMAKE_CXX_STANDARD)
+	SET(CMAKE_CXX_STANDARD 11)
+ENDIF()
+
+
+#查找boost
+SET(Boost_USE_MULTITHREADED	ON)
+SET(LIBBOOST_REQUIRED_VERSION 1.6.0)
+#查找需要的库
+FIND_PACKAGE(Boost ${LIBBOOST_REQUIRED_VERSION} 
+	COMPONENTS 
+	thread system)
+	
+FIND_PACKAGE(OpenCV REQUIRED)
+
+if(MSVC)
+  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+
+  if(NOT OpenCV_SHARED)
+    foreach(flag_var
+            CMAKE_C_FLAGS CMAKE_C_FLAGS_DEBUG CMAKE_C_FLAGS_RELEASE
+            CMAKE_C_FLAGS_MINSIZEREL CMAKE_C_FLAGS_RELWITHDEBINFO
+            CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
+            CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
+      if(${flag_var} MATCHES "/MD")
+        string(REGEX REPLACE "/MD" "/MT" ${flag_var} "${${flag_var}}")
+      endif()
+      if(${flag_var} MATCHES "/MDd")
+        string(REGEX REPLACE "/MDd" "/MTd" ${flag_var} "${${flag_var}}")
+      endif()
+    endforeach(flag_var)
+
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /NODEFAULTLIB:atlthunk.lib /NODEFAULTLIB:msvcrt.lib /NODEFAULTLIB:msvcrtd.lib")
+    set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} /NODEFAULTLIB:libcmt.lib")
+    set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} /NODEFAULTLIB:libcmtd.lib")
+  endif()
+endif()
+
+
+
+SET(COMMON_LINK_LIBRARYS 
+	${Boost_LIBRARIES} 
+	${OpenCV_LIBRARIES} 
+	)
+
+SET(SOURCE_FILES 
+    OpticalFlow.cpp
+    )
+	
+ADD_EXECUTABLE(OpticalFlow     
+	${SOURCE_FILES}
+	)
+		
+TARGET_LINK_LIBRARIES(OpticalFlow ${COMMON_LINK_LIBRARYS})
+	
+	
+
