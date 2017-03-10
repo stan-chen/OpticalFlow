@@ -1,5 +1,3 @@
+ï»¿# Optical Python 
 
-# Optical Python 
-
-
-×îÐÂ°æ±¾»ùÓÚ¹âÁ÷·¨µÄÁÑÎÆ¼ì²âPython´úÂë
+æœ€æ–°ç‰ˆæœ¬åŸºäºŽå…‰æµæ³•çš„è£‚çº¹æ£€æµ‹Pythonä»£ç 
